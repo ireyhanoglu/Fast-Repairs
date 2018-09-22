@@ -1,0 +1,81 @@
+/*----------------DEFAULTS-----------------*/
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  background-image: url(background.jpg);
+  background-color: black;
+  background-size: 100%;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+p {
+  margin: 0 0 25px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.row{
+  line-height: 1.0;
+}
+
+/*----------------NAVBAR-----------------*/
+
+.navbar-custom {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+.navbar-custom a {
+  color: white;
+}
+.navbar-custom .nav li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  outline: none;
+  background-color: transparent;
+}
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:active {
+  outline: none;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+  .navbar-custom {
+    padding: 10px 0;
+    border-bottom: none;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,.75);  /* our change*/
+    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+}
+
+/*----------------SEARCHBOX-----------------*/
+
+.intro, .intro-status{
+  width: 100%;
+  margin-top: 3%;
+  text-align: center;
+  color: white;
+  background: transparent;
+}
+.custbill {
+  margin-top: 4%;
+}
+.intro-update{
+  margin-top: 8%
+}
+.search-btn{
+  float: center;
+  padding-top: 10px;
+}
+.search-box{
+  background-color: rgba(0,0,0,.75);
+  padding-top: 15px;
+}

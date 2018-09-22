@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FastRepair, Inc.</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="data_index.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body id="page-top" data-spy="scroll">
+
+  <nav class="navbar navbar-custom navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand page-scroll" href="#">FastRepairs, Inc.</a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="hidden"><a href="#page-top"></a></li>
+          <li><a class="page-scroll" href="#">Customer</a></li>
+          <li><a class="page-scroll" href="#">Employee</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="intro">
+    <div>
+      <div class="container img-rounded col-md-offset-1 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10">Enter user and device information to request a repair for a device.</p>
+          <form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/insertRepairItem.php" target="votar">
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-name">Name</label>
+              <input type="text" class="form-control" id="input-name" name="custName" placeholder="Daffy Duck">
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-phone">Phone</label>
+              <input type="text" class="form-control" id="input-phone" name="custPhone" placeholder="0123456789">
+            </div>
+			<div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-device">Device</label>
+              <select id="input-device" class="form-control" name="device">
+				<option value="none"></option>
+                <option value="computer">Computer</option>
+                <option value="printer">Printer</option>
+              </select>
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-price">Price</label>
+              <input type="text" class="form-control" id="input-price" name="price" placeholder="Round up to whole #">
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-year">Year</label>
+              <input type="text" class="form-control" id="input-year" name="year" placeholder="2018">
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-model">Model</label>
+              <select id="input-model" class="form-control" name="model">
+                <option value="none"></option>
+                <option value="dell-coy">Dell Coy</option>
+                <option value="mac-tiger">Mac Tiger</option>
+                <option value="mac-leopard">Mac Leopard</option>
+                <option value="hp-envy">HP Envy</option>
+              </select>
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="input-sctype">Service Contract Type</label>
+              <select id="input-sctype" class="form-control" name="contractType">
+                <option value="NONE">NONE</option>
+                <option value="SINGLE">SINGLE</option>
+                <option value="GROUP">GROUP</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-btn">
+			<iframe name="votar" style="display:none;"></iframe>
+            <button type="submit" class="btn btn-success btn-lg" onclick="formsubmit()">Request Repair</button> 
+          </div>
+        </form>
+        <hr>  
+      </div>
+    </div>
+
+    <div class="intro-status">
+      <div class="container img-rounded col-md-offset-2 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10"> Please provide your device's ID or your phone number to check the status of your device.
+          </p>
+          <form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/checkStatus.php">
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="machineid">Device ID</label>
+              <input type="text" class="form-control" name="machineid" id="machineid" placeholder="c000 or p000">
+            </div>
+			<p class="col-md-offset-3 col-md-6"> OR </p>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="ownerphone">Phone</label>
+              <input type="text" class="form-control" name="ownerphone" id="ownerphone" placeholder="0123456789">
+            </div>
+          </div>
+		  <div class="search-btn">
+          	 <button type="submit" value="Submit" class="btn btn-success btn-lg">Check</button>
+          </div>
+        </form>
+        <hr>  
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="container img-rounded col-md-offset-2 col-md-4 search-box custbill">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10"> Please provide your device's ID to request your customer bill.</p>
+          <form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/createCustomerBill.php">
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="cust-machineid">Device ID</label>
+              <input type="text" class="form-control" name="cust-machineid" id="cust-machineid" placeholder="c000 or p000">
+            </div>
+          </div>
+		  <div class="search-btn">
+          	  <button type="submit" value="Submit" class="btn btn-success btn-lg">Request Bill</button>
+          	</div>
+          </form>
+        <hr>  
+      </div>
+    </div>
+  </header>
+
+  <script>
+	function formsubmit()
+	{
+	  alert("Form submitted");
+	}
+	</script>
+</body>
+
+</html>

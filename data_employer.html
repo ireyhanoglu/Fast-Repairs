@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FastRepair, Inc.</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="data_index.css" rel="stylesheet">
+</head>
+
+<body id="page-top" data-spy="scroll">
+
+  <nav class="navbar navbar-custom navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand page-scroll" href="#">FastRepairs, Inc.</a>
+      </div>
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="hidden"><a href="#page-top"></a></li>
+          <li><a class="page-scroll" href="#">Customer</a></li>
+          <li><a class="page-scroll" href="#">Employer</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="intro">
+    <div class="intro-update">
+      <div class="container img-rounded col-md-offset-1 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10">Enter device here if an item is repaired.</p>
+          <form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/updateRepairItem.php" target="votar">
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="itemid">Device ID</label>
+              <input type="text" class="form-control" name="machineid" id="machineid" placeholder="c8, p7">
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="status">Status</label>
+              <select id="status" name="status" class="form-control">
+                <option value="NONE"></option>
+                <option value="READY">READY</option>
+                <option value="DONE">DONE</option>
+              </select>
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="costofparts">Cost of Parts</label>
+              <input type="text" class="form-control" name="costofparts" id="costofparts" placeholder="Money">
+            </div>
+            <div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="hours">Hours</label>
+              <input type="text" class="form-control" name="hours" id="hours" placeholder="Round up to whole #">
+            </div>
+			<div class="col-md-offset-3 col-md-6 form-group text-center">
+              <label for="problemid">Problem Id</label>
+              <input type="text" class="form-control" name="problemid" id="problemid">
+            </div>
+		  </div>
+		  <div class="search-btn">
+			<iframe name="votar" style="display:none;"></iframe>
+            <button type="submit" value="Submit" class="btn btn-success btn-lg">Update</button>
+          </div>
+        </form>
+		<hr>
+      </div>
+    </div>
+
+	<div class="intro">
+      <div class="container img-rounded col-md-offset-1 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10">Would you like to view the repair jobs that have the status UNDER_REPAIR?</p>
+		</div>
+		<form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/showRepairJobs.php">
+  		  <div class="search-btn">
+            <button type="submit" value="Submit" class="btn btn-success btn-lg">Show Repair Jobs</button>
+          </div>
+		</form>
+		<hr>
+      </div>
+    </div>
+
+	<div class="intro">
+      <div style="margin-top: 2%;" class="container img-rounded col-md-offset-1 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10">Would you like to view the repair log?</p>
+		</div>
+		<form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/showRepairLog.php">
+  		  <div class="search-btn">
+            <button type="submit" value="Submit" class="btn btn-success btn-lg">Show Repair Log</button>
+          </div>
+		</form>
+		<hr>
+      </div>
+    </div>
+
+	<div class="intro">
+      <div style="margin-top: 2%;" class="container img-rounded col-md-offset-1 col-md-4 search-box">
+        <div class="row">
+          <p class="col-md-offset-1 col-md-10">Enter two dates (year-month-date, XXXX-XX-XX) to show the revenue generated between those times. </p>
+		</div>
+		<form method="post" action="http://students.engr.scu.edu/~ireyhano/coen178finalproject/showRevenue.php">
+		  <div class="col-md-offset-3 col-md-6 form-group text-center">
+            <label for="date1">Device ID</label>
+            <input type="text" class="form-control" name="date1" id="date1" placeholder="2012-05-19">
+          </div>
+	 	  <div class="col-md-offset-3 col-md-6 form-group text-center">
+            <label for="date2">Device ID</label>
+            <input type="text" class="form-control" name="date2" id="date2" placeholder="2018-04-28">
+          </div>
+  		  <div class="search-btn">
+            <button type="submit" value="Submit" class="btn btn-success btn-lg">Show Repair Jobs</button>
+          </div>
+		</form>
+		<hr>
+      </div>
+    </div>
+
+  </header>
+
+</body>
+</html>
